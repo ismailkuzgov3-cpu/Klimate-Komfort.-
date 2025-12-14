@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Klimate Komfort — Отопление, Кондиционирование, Вентиляция</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --primary-dark: #0d47a1;
+      --accent: #ff6b35;
+      --light: #f9f9f9;
+      --dark: #333;
+      --gray: #666;
+      --light-gray: #eee;
+      --white: #fff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--white);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    /* Header */
+    /* Header */
+.header {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+.header-logo {
+  font-family: 'Montserrat', 'Arial Black', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+}
+.header-logo .logo-top {
+  font-size: 2rem;
+}
+.header-logo .logo-bottom {
+  font-size: 1.6rem;
+  color: var(--dark);
+}
+    .nav-menu ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+    }
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+    .header-contact {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .phone { font-weight: 600; color: var(--primary); }
+    .phone a, .contact-phone, .phone-link {
+      color: inherit;
+      text-decoration: none;
+    }
+    .phone a:hover, .phone-link:hover { text-decoration: underline; }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+    .btn-secondary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-features {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 160px;
+    }
+    .feature-item i {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .hero-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+    }
+    /* Для планшетов и телефонов */
+@media (max-width: 992px) {
+  .nav-menu ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .nav-menu a {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Для телефонов */
+@media (max-width: 768px) {
+  .header .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .nav-menu ul {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .nav-menu a {
+    font-size: 0.85rem;
+    padding: 5px 8px;
+  }
+  
+  .header-contact {
+    margin-left: auto;
+  }
+}
+
+/* Для очень маленьких телефонов */
+@media (max-width: 480px) {
+  .nav-menu ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .nav-menu li {
+    text-align: center;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 8px 5px;
+    font-size: 0.8rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .header-contact {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  
+  .header-contact .btn {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(26, 115, 232, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--primary);
+      font-size: 2rem;
+    }
+    /* Portfolio */
+    .portfolio-filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .filter-btn {
+      background: white;
+      border: 2px solid var(--light-gray);
+      padding: 8px 16px;
+      margin: 0 5px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    /* Masters */
+    .masters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .master-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .master-avatar img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid var(--primary);
+    }
+    .master-rating { color: gold; margin: 10px 0; }
+    /* Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-backdrop.active {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--gray);
+    }
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 50px 0 0;
+    }
+    .footer .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+    .footer-logo img {
+      height: 35px;
+      margin-bottom: 10px;
+    }
+    .footer-links a,
+    .footer-social a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      font-size: 1.5rem;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 30px;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-buttons, .hero-features { flex-direction: column; align-items: center; }
+      .footer .container { grid-template-columns: 1fr; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ЛОГОТИП КОМПАНИИ В ЛЕВОМ ВЕРХНЕМ УГЛУ -->
+<header class="header">
+  <div class="container">
+    <div class="header-logo">
+      <div class="logo-top">KLiMATE</div>
+      <div class="logo-bottom">KOMFORT</div>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#about">О компании</a></li>
+        <li><a href="#portfolio">Портфолио</a></li>
+        <li><a href="#masters">Мастера</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-contact">
+      <div class="phone"><i class="fas fa-phone"></i> <a href="tel:+79227448867">+7 (922) 744-88-67</a></div>
+      <button class="btn btn-primary" onclick="openModal('callback')">Заказать звонок</button>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Тепло зимой, прохладно летом в вашем доме и офисе</h1>
+      <p>Профессиональный монтаж и обслуживание систем отопления, кондиционирования и вентиляции в Москве и области</p>
+      <div class="hero-features">
+        <div class="feature-item"><i class="fas fa-car-alt"></i><span>Бесплатный выезд и замер</span></div>
+        <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Гарантия до 3-х лет</span></div>
+        <div class="feature-item"><i class="fas fa-users"></i><span>Опытные инженеры</span></div>
+        <div class="feature-item"><i class="fas fa-broom"></i><span>Чистый монтаж</span></div>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="openModal('calculate')">Рассчитать стоимость</button>
+        <button class="btn btn-secondary" onclick="openModal('master')">Вызвать мастера</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <h2>Наши услуги</h2>
+    <p class="section-subtitle">Полный комплекс услуг для создания идеального климата</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-fire"></i></div>
+        <h3>Отопление</h3>
+        <p>Газовые котлы, радиаторы, теплые полы — надежное тепло даже в сильные морозы.</p>
+        <button class="btn btn-outline" onclick="showServiceModal('Отопление', 'Монтаж газовых, электрических и твердотопливных котлов. Установка радиаторов и систем теплый пол. Проектирование котельных под ключ.')">Подробнее</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+        <h3>Кондиционирование</h3>
+        <p>Тишина, комфорт и чистый воздух — подберем и установим систему под ваш бюджет.</p>
+        <button class="btn btn-outline" onclick="showServiceModal('Кондиционирование', 'Установка сплит-систем, мульти-сплит, канальных, кассетных и VRV/VRF-систем. Продажа и монтаж от ведущих брендов: Daikin, Mitsubishi, Ballu.')">Подробнее</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-wind"></i></div>
+        <h3>Вентиляция</h3>
+        <p>Свежий воздух 24/7 — с рекуперацией, фильтрацией и автоматикой.</p>
+        <button class="btn btn-outline" onclick="showServiceModal('Вентиляция', 'Монтаж приточной, вытяжной и приточно-вытяжной вентиляции. Установка бризеров и рекуператоров от Tion, Vakio и других производителей.')">Подробнее</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<section id="about" class="about">
+  <div class="container">
+    <h2>Почему выбирают нас</h2>
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;">
+      <div class="about-stats">
+        <div class="stat-item"><span style="font-size:2.5rem;font-weight:700;color:var(--primary);display:block;">10+</span><span>лет на рынке</span></div>
+        <div class="stat-item"><span style="font-size:2.5rem;font-weight:700;color:var(--primary);display:block;">1500+</span><span>проектов</span></div>
+        <div class="stat-item"><span style="font-size:2.5rem;font-weight:700;color:var(--primary);display:block;">36</span><span>мес. гарантии</span></div>
+      </div>
+      <div class="about-text">
+        <p>Мы делаем один простой продукт — <strong>комфорт</strong>. Без скрытых платежей, с фиксированной ценой и уборкой после себя.</p>
+        <ul style="margin-top:20px;">
+          <li style="margin-bottom:10px;"><i class="fas fa-check"></i> Официальный договор</li>
+          <li style="margin-bottom:10px;"><i class="fas fa-check"></i> Расчёт стоимости до начала работ</li>
+          <li style="margin-bottom:10px;"><i class="fas fa-check"></i> Только проверенные бренды: Daikin, Baxi, Mitsubishi, Ballu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <h2>Наши работы</h2>
+    <p class="section-subtitle">Реальные объекты, сданные "под ключ"</p>
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="apartment">Квартиры</button>
+      <button class="filter-btn" data-filter="house">Дома</button>
+      <button class="filter-btn" data-filter="office">Офисы</button>
+      <button class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-category="apartment">
+        <img src="https://avatars.mds.yandex.net/i?id=dba494d55067749acd5cd8ee90ba0c1544f9364a-5194885-images-thumbs&n=13" alt="Квартира">
+        <h3>Квартира</h3>
+        <p>?</p>
+        <button class="btn btn-outline" onclick="showPortfolioModal('Квартира, 65 м²', 'пока ничего')">Подробнее</button>
+      </div>
+      <div class="portfolio-item" data-category="house">
+        <img src="https://avatars.mds.yandex.net/i?id=dba494d55067749acd5cd8ee90ba0c1544f9364a-5194885-images-thumbs&n=13" alt="Дом">
+        <h3>Дом</h3>
+        <p>?</p>
+        <button class="btn btn-outline" onclick="showPortfolioModal('Коттедж, 180 м²', 'пока ничего')">Подробнее</button>
+      </div>
+      <div class="portfolio-item" data-category="office">
+        <img src="https://avatars.mds.yandex.net/i?id=dba494d55067749acd5cd8ee90ba0c1544f9364a-5194885-images-thumbs&n=13" alt="Офис">
+        <h3>Офис, 120 м²</h3>
+        <p>?</p>
+        <button class="btn btn-outline" onclick="showPortfolioModal('Офис, 120 м²', 'пока ничего')">Подробнее</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="masters" class="masters">
+  <div class="container">
+    <h2>Наши мастера</h2>
+    <p class="section-subtitle">Специалисты с опытом от 5 лет</p>
+    <div class="masters-grid">
+      <div class="master-card">
+        <div class="master-avatar">
+          <img src="https://parade.com/.image/w_3840,q_auto:good,c_fill,ar_1:1/MTkwNTc1ODc5NDk3Nzg2NDkz/cb63c7d89eae4ef80cbe49eabc5a7f34-s-600-d-mm-r-g.jpg" alt="нет">
+        </div>
+        <h3>нет</h3>
+        <div class="master-rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="master-phone">
+          <a href="tel:+79001112233" class="phone-link">+7 (000) 111-22-33</a>
+        </p>
+        <p class="master-review"></p>
+      </div>
+      <div class="master-card">
+        <div class="master-avatar">
+          <img src="https://parade.com/.image/w_3840,q_auto:good,c_fill,ar_1:1/MTkwNTc1ODc5NDk3Nzg2NDkz/cb63c7d89eae4ef80cbe49eabc5a7f34-s-600-d-mm-r-g.jpg" alt="нет">
+        </div>
+        <h3>нет</h3>
+        <div class="master-rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="master-phone">
+          <a href="tel:+79004445566" class="phone-link">+7 (900) 444-55-66</a>
+        </p>
+        <p class="master-review"></p>
+      </div>
+      <div class="master-card">
+        <div class="master-avatar">
+          <img src="https://parade.com/.image/w_3840,q_auto:good,c_fill,ar_1:1/MTkwNTc1ODc5NDk3Nzg2NDkz/cb63c7d89eae4ef80cbe49eabc5a7f34-s-600-d-mm-r-g.jpg" alt="нет">
+        </div>
+        <h3>нет</h3>
+        <div class="master-rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="master-phone">
+          <a href="tel:+79007778899" class="phone-link">+7 (900) 777-88-99</a>
+        </p>
+        <p class="master-review"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="contacts">
+  <div class="container">
+    <h2>Свяжитесь с нами</h2>
+    <p class="section-subtitle">Готовы создать идеальный климат в вашем доме?</p>
+    <div class="contacts-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:50px;">
+      <div class="contacts-info">
+        <p><i class="fas fa-map-marker-alt"></i> г. Карабулак, ул. .., д. ..</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+78001234567" class="contact-phone">+7 (922) 744-67</a></p>
+        <p><i class="fas fa-envelope"></i> info@klimate-komfort.ru</p>
+        <p><i class="fas fa-clock"></i> Пн–Сб: 8:00–20:00</p>
+      </div>
+      <form id="contactForm" class="contact-form" style="display:flex;flex-direction:column;gap:15px;">
+        <input type="text" placeholder="Ваше имя" required style="padding:12px;border:1px solid var(--light-gray);border-radius:6px;">
+        <input type="tel" placeholder="Телефон" required style="padding:12px;border:1px solid var(--light-gray);border-radius:6px;">
+        <select required style="padding:12px;border:1px solid var(--light-gray);border-radius:6px;">
+          <option value="">Выберите услугу</option>
+          <option>Отопление</option>
+          <option>Кондиционирование</option>
+          <option>Вентиляция</option>
+          <option>Обслуживание</option>
+        </select>
+        <textarea placeholder="Сообщение" style="padding:12px;border:1px solid var(--light-gray);border-radius:6px;height:120px;"></textarea>
+        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Модальные окна -->
+<div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='40' viewBox='0 0 140 40'%3E%3Crect width='140' height='40' fill='%231a73e8'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial' font-size='14' fill='white' text-anchor='middle'%3EKLIMATE KOMFORT%3C/text%3E%3C/svg%3E" alt="KLIMATE KOMFORT">
+      <p>Создаём комфорт с 2015 года</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Главная</a>
+      <a href="#services">Услуги</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-vk"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Klimate Komfort. Все права защищены.</p>
+    <p><a href="#" style="color:#aaa;text-decoration:none;">Политика конфиденциальности</a></p>
+  </div>
+</footer>
+
+<script>
+  // === МОДАЛКИ ===
+  function openModal(type) {
+    const modal = document.getElementById('modalBackdrop');
+    const body = document.getElementById('modalBody');
+    let content = '';
+
+    switch(type) {
+      case 'calculate':
+        content = `
+          <h2>Рассчитать стоимость</h2>
+          <form id="calcForm" style="display:flex;flex-direction:column;gap:15px;margin-top:20px;">
+            <select required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+              <option value="">Выберите услугу</option>
+              <option>Отопление</option>
+              <option>Кондиционирование</option>
+              <option>Вентиляция</option>
+            </select>
+            <input type="number" placeholder="Площадь помещения (м²)" min="10" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <input type="tel" placeholder="Ваш телефон" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">Получить расчёт</button>
+          </form>
+        `;
+        break;
+      case 'master':
+        content = `
+          <h2>Вызвать мастера</h2>
+          <form id="masterForm" style="display:flex;flex-direction:column;gap:15px;margin-top:20px;">
+            <input type="text" placeholder="Ваше имя" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <input type="tel" placeholder="Телефон" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <textarea placeholder="Адрес и описание проблемы" style="padding:10px;border:1px solid #ddd;border-radius:6px;height:100px;"></textarea>
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">Вызвать</button>
+          </form>
+        `;
+        break;
+      case 'callback':
+        content = `
+          <h2>Заказать звонок</h2>
+          <form id="callbackForm" style="display:flex;flex-direction:column;gap:15px;margin-top:20px;">
+            <input type="text" placeholder="Ваше имя" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <input type="tel" placeholder="Телефон" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">Перезвоните мне</button>
+          </form>
+        `;
+        break;
+    }
+
+    body.innerHTML = content;
+    modal.classList.add('active');
+
+    // Обработка форм
+    const form = body.querySelector('form');
+    if (form) {
+      form.onsubmit = function(e) {
+        e.preventDefault();
+        alert('✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+        closeModal();
+      };
+    }
+  }
+
+  function closeModal() {
+    document.getElementById('modalBackdrop').classList.remove('active');
+  }
+
+  function showServiceModal(title, description) {
+    const modal = document.getElementById('modalBackdrop');
+    const body = document.getElementById('modalBody');
+    body.innerHTML = `
+      <h2>${title}</h2>
+      <p style="margin:20px 0;">${description}</p>
+      <button class="btn btn-primary" onclick="openModal('calculate')" style="width:100%;padding:12px;">Заказать услугу</button>
+    `;
+    modal.classList.add('active');
+  }
+
+  function showPortfolioModal(title, description) {
+    const modal = document.getElementById('modalBackdrop');
+    const body = document.getElementById('modalBody');
+    body.innerHTML = `
+      <h2>${title}</h2>
+      <p style="margin:20px 0;">${description}</p>
+      <button class="btn btn-primary" onclick="openModal('calculate')" style="width:100%;padding:12px;">Рассчитать свой проект</button>
+    `;
+    modal.classList.add('active');
+  }
+
+  // === ФИЛЬТРЫ ПОРТФОЛИО ===
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // === ОТПРАВКА КОНТАКТНОЙ ФОРМЫ ===
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('✅ Спасибо за заявку! Мы скоро свяжемся с вами.');
+    this.reset();
+  });
+
+  // === ПЛАВНАЯ ПРОКРУТКА ===
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      if (this.getAttribute('href') === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
